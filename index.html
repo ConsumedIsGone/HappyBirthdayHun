@@ -9,7 +9,6 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ffd6e8, #fff1f7);
   color: #333;
   text-align: center;
   overflow-x: hidden;
@@ -198,7 +197,7 @@ input {
 <!-- Secret Section -->
 <section id="secret" class="hidden">
   <h1>Only You Know This</h1>
-  <p>Which is the best day of my life?<br>(DD/MM/YYYY)</p>
+  <p>Which is the best day of my life?<br>(DDMMYYYY)</p>
   <input id="answer" placeholder="type here" inputmode="numeric">
   <button onclick="check()">Unlock</button>
   <p id="secretMsg"></p>
@@ -226,6 +225,19 @@ function hideEggs() {
 
 function go(id) {
   window.scrollTo(0,0);
+
+  const themes = {
+    'intro': 'linear-gradient(135deg, #ffd6e8, #fff1f7)',
+    'menu': 'linear-gradient(135deg, #fff1f7, #ffd6e8)',
+    'letter': 'linear-gradient(180deg, #ffafbd, #ffc3a0)', // Sunset
+    'memories': 'linear-gradient(135deg, #1a1a1a, #434343)', // Dark
+    'reasons': 'linear-gradient(135deg, #FFD194, #FAD7A0)', // Orange pastel
+    'secret': 'linear-gradient(135deg, #d9f7dc, #e3ffe7)', // Green pastel
+    'end': 'linear-gradient(135deg, #ff5c8a, #ff3b70)'
+  };
+
+  document.body.style.background = themes[id] || themes['intro'];
+
   document.querySelectorAll("section").forEach(s => {
     s.classList.add("hidden");
     s.classList.remove("active");
@@ -235,7 +247,7 @@ function go(id) {
   setTimeout(() => sec.classList.add("active"), 50);
 }
 
-// Full letter text
+// Full Letter
 const letter = `HAPPY BIRTHDAY MY AMAZINGGGGGG RIDDHUUUU!!!
 
 Today is a day that the whole universe should be celebrating, because it’s the day my favoritest person was born (any guesses who?). Having you in my life feels like living in a permanent springtime, (that's if spring was the best cause winter is clearly better)—everything is just brighter, softer, and so much more beautiful when I’m with you.
@@ -270,7 +282,7 @@ function openLetter() {
   }, 25);
 }
 
-// Reasons array
+// Reasons
 const reasons = [
   "The way you laugh like a baboon",
   "Your random expressions and dancing",
@@ -320,7 +332,7 @@ function newReason() {
 function check() {
   const ans = document.getElementById("answer").value.trim();
   document.getElementById("secretMsg").innerText =
-    ans === "03/10/2024"
+    ans === "03102024"
       ? "That day lives in my heart forever ❤️... You made it so good."
       : "Try again 😉";
 }
@@ -328,4 +340,3 @@ function check() {
 
 </body>
 </html>
-
