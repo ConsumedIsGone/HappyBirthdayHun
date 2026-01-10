@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Riddhu ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden { display: none; }
+
+h1 { font-size: 3rem; margin-bottom: 10px; }
+p { font-size: 1.1rem; max-width: 760px; line-height: 1.7; }
+
+button {
+  margin-top: 25px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background: #ff5c8a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover { background: #ff3b70; }
+
+/* Menu cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1100px;
+}
+.card {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* Typing */
+#typedText {
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+}
+
+/* Memories */
+.timeline {
+  max-width: 820px;
+  width: 100%;
+}
+
+.memory {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  margin: 22px 0;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  text-align: left;
+}
+
+.memory img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+/* Easter eggs */
+.egg {
+  position: fixed;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+#egg1 { top: 20%; left: 8%; }
+#egg2 { bottom: 15%; right: 10%; }
+#egg3 { top: 35%; right: 6%; }
+#egg4 { bottom: 30%; left: 12%; }
+#egg5 { top: 60%; left: 5%; }
+#egg6 { bottom: 45%; right: 18%; }
+
+
+#reasonText {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff5c8a;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section id="intro" class="active">
+  <h1>HAPPY BIRTHDAY MONKEYYYYY 💖💖😜🥳🥳🥳</h1>
+  <p>I made this only for you Riddhu, the most important person in my life :)</p>
+  <button onclick="go('menu')">Start</button>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="hidden">
+  <h1>Choose Anything ✨</h1>
+
+  <div class="card-grid">
+    <div class="card" onclick="openLetter()">
+      <img src="menu0.jpg">
+      <p>A Letter</p>
+    </div>
+
+    <div class="card" onclick="go('memories')">
+      <img src="menu1.jpg">
+      <p>Our Memories</p>
+    </div>
+
+    <div class="card" onclick="go('reasons')">
+      <img src="menu2.jpg">
+      <p>Why You're the Best</p>
+    </div>
+
+    <div class="card" onclick="go('secret')">
+      <img src="menu3.jpeg">
+      <p>Something Hidden</p>
+    </div>
+  </div>
+
+  <button onclick="go('end')">I saw everything</button>
+</section>
+
+<!-- LETTER -->
+<section id="letter" class="hidden">
+  <h1>Letter For U 💖</h1>
+  <p id="typedText"></p>
+  <button onclick="go('menu')">Back</button>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories" class="hidden">
+  <h1>Us 💗</h1>
+
+  <div class="timeline">
+    <div class="memory">
+      <img src="mem1.jpg">
+      <strong>Together on sand dune</strong><br>
+      Just us, the wind, and a moment that felt unreal.
+    </div>
+
+    <div class="memory">
+      <img src="mem2.jpg">
+      <strong>Secret Admirer</strong><br>
+      You're not sneaky hun.
+    </div>
+
+    <div class="memory">
+      <img src="mem3.jpeg">
+      <strong>Us between lanterns</strong><br>
+      Everything glowing, especially you.
+    </div>
+
+    <div class="memory">
+      <img src="mem4.jpg">
+      <strong>You looking like a ajji</strong><br>
+      Iconic. Timeless. Absolutely ancient 🤣.
+    </div>
+
+    <div class="memory">
+      <img src="mem5.jpg">
+      <strong>You trying to be cool</strong><br>
+      Failed successfully (still hot though).
+    </div>
+
+    <div class="memory">
+      <img src="mem6.jpeg">
+      <strong>Us doing bs at a mall</strong><br>
+      We don't have a poker face.
+    </div>
+
+    <div class="memory">
+      <img src="mem7.jpeg">
+      <strong>Us in Ferrari World</strong><br>
+      Speed, screams, and the biggest smiles.
+    </div>
+  </div>
+
+  <button onclick="go('menu')">Back</button>
+</section>
+
+<!-- REASONS -->
+<section id="reasons" class="hidden">
+  <h1>You Matter ❤️</h1>
+  <p id="reasonText">Click below</p>
+  <button onclick="newReason()">Tell me another</button>
+  <button onclick="go('menu')">Back</button>
+</section>
+
+<!-- SECRET -->
+<section id="secret" class="hidden">
+  <h1>Only You Know This</h1>
+  <p>Which is the best day of my life? (DD/MM/YYYY)</p>
+  <input id="answer" placeholder="type here">
+  <button onclick="check()">Unlock</button>
+  <p id="secretMsg"></p>
+  <button onclick="go('menu')">Back</button>
+</section>
+
+<!-- END -->
+<section id="end" class="hidden">
+  <h1>Happy Birthday ❤️</h1>
+  <p>This will always be yours.</p>
+</section>
+
+<!-- Easter eggs -->
+<div class="egg" id="egg1" onclick="alert('I love you endlessly ❤️')">💖</div>
+<div class="egg" id="egg2" onclick="alert('You are my favourite person ✨')">✨</div>
+<div class="egg" id="egg3" onclick="alert('You are my home 🏡')">🌸</div>
+<div class="egg" id="egg4" onclick="alert('I choose you. Every time. 💍')">💫</div>
+<div class="egg" id="egg5" onclick="alert('My safest place is you 💗')">🫶</div>
+<div class="egg" id="egg6" onclick="alert('You make my world softer 🌙')">⭐</div>
+
+
+<script>
+function go(id) {
+  document.querySelectorAll("section").forEach(s => {
+    s.classList.add("hidden");
+    s.classList.remove("active");
+  });
+  const sec = document.getElementById(id);
+  sec.classList.remove("hidden");
+  setTimeout(() => sec.classList.add("active"), 50);
+}
+
+/* LETTER */
+const letter = `HAPPY BIRTHDAY MY AMAZINGGGGGG RIDDHUUUU!!!
+
+Today is a day that the whole universe should be celebrating, because it’s the day my favoritest person was born (any guesses who?). Having you in my life feels like living in a permanent springtime, (that's if spring was the best cause winter is clearly better)—everything is just brighter, softer, and so much more beautiful when I’m with you.
+
+You are my absolute sunshine, my softest place to land, and the person who makes my heart do a little happy dance every single time you smile. Even though I may not always say it out loud and just stare at you instead, there’s not a moment that passes where I don’t admire the beautiful and whole hearted person you are and how much I just love you.
+
+You deserve literally the world, all 4/3*6371*6371*6371*22/7 m^3 of it. (I’m sorry for a physics joke) 
+This letter cannot do any justice to how much I love you and how much I keep falling deeper into this rabbit hole of love each day I get to spend with you. The dictionary literally does not have words for how stunning of a person you are, both inside and out. You are genuinely the best person in my life and I really wish I could fulfill every wish of yours.
+
+I mean SERIOUSLY, you’ve been making my life funnier and full of twists for almost 3 years at this point. Without you, my life would be unsalted like your jokes WHICH ARE TOTALLY NOT FUNNYYY (im not appealing to ur ego just cause its ur bday). But in all seriousness, every time you act sassy and do that funny head bob of yours saying “Who’s the best? I AM!” I could literally hug you so hard that you turn into pulp 😅.
+
+Also, please try to act surprised when you open the rest of your gift later. I know I’m about as subtle as a firework when it comes to keeping secrets, but I really tried my best this time. Even if you’ve already guessed what it is, just give me that cute "WOW YOU’RE THE BEST TANMAY” reaction when you read this that makes my heart melt. You’re another year older, but don’t worry—you still don’t look a day over "RIDICULOUSLY ADORABLE AND HOT AND CUTE AND AND RAVISHING AND SO SO PRETTY AND ANGELIC AND AND GORGEOUS AND SO SO SO SO IRRESISTABLE ITS IMPOSSIBLE TO NOT KISS YOUUUUU OMG” years old.
+
+I want to spend today (and every day after) making sure you feel like the most cherished person on the planet because u got me and I’ll NEVERRR stop CHERISHINGG UUUU. You deserve the world wrapped in a pink ribbon, but for now, I’m sending you all my love, a thousand kisses, and a promise to always be your biggest fan.
+
+Happy Birthday, my angel. I love you more than words can say
+
+Forever yours,
+Tanmay`;
+
+let index = 0;
+let typingInterval;
+
+function openLetter() {
+  go('letter');
+  document.getElementById("typedText").innerText = "";
+  index = 0;
+  clearInterval(typingInterval);
+
+  typingInterval = setInterval(() => {
+    if (index < letter.length) {
+      document.getElementById("typedText").innerText += letter[index];
+      index++;
+    } else {
+      clearInterval(typingInterval);
+    }
+  }, 35);
+}
+
+/* Reasons */
+const reasons = [
+  "The way you laugh like a baboon",
+  "Your random expressions and dancing",
+  "How happy you make me feel",
+  "Your softness (jk)",
+  "Your chaos (just like some whirlwind)",
+  "How you care so deeply (mariana trench girly)",
+  "The way you exist (prettyyyyy)",
+  "Everything that makes you you",
+  "How you literally make every day better",
+  "The way you randomly start vocalising like the Disney Princess you are",
+  "How you ask me the most random braindead questions",
+  "How you always laugh to my bs jokes",
+  "The way you always make me leave my comfort zone",
+  "The way you always bully me",
+  "The fact that YOU CHOSE MEEEE",
+  "How you borrow my hoodies when we meet up and I never see them again",
+  "The way you get hangry and then pretend you were being perfectly reasonable.",
+  "The fact that you remember things I said three years ago but forget the name of the movie I mentioned last week.",
+  "How you try to act cool when walking into a room and then trip over your own feet or smth.",
+  "The way you rest your eyes when we're on text and you disappear from the earth.",
+  "How you make a angry face to try and intimidate me, but you’re just adorableeeee.",
+  "How you try to hold back a laugh when I’m trying to tell you something important.",
+  "Yourhappy food dance that happens every time u eat gud food.",
+  "The way you always find a way to make me laugh when Im being a grump.",
+  "The way you look at me from across a crowded room. (cliche ik)",
+  "Your inability to tell a story without going off on ten different side-plots.",
+  "The way you complain about being hot and cold within the same five minutes.",
+  "The way you react to a jump scare in a COMEDY movie.",
+  "Your zoomies when we finally arrive at a place you’ve been wanting to go with me.",
+  "How you always bore your friends by talking about me",
+  "Your outfit of the day selfies that make u look yummmmmmy",
+  "Your total lack of a sense of direction (it keeps life an adventure).",
+  "The way you look when youre trying to be mad at me but your dimples show.",
+  "The fact that after all your bullying and chaos, you're still my favorite person to see at the end of the day.",
+  "Your refusal to admit you’re tired until your head is literally drooping.",
+  "The amount of energy you have in the mornings omg how r u so hyper",
+  "The way you SCREAM at the sight of an ant or cockroach but find a giant spider cute",
+  
+];
+
+function newReason() {
+  const r = reasons[Math.floor(Math.random() * reasons.length)];
+  document.getElementById("reasonText").innerText = r;
+}
+
+/* Secret */
+function check() {
+  const ans = document.getElementById("answer").value.trim();
+  if (ans === "03/10/2024") {
+    document.getElementById("secretMsg").innerText =
+      "That day lives in my heart forever ❤️... You made it so good. I'll never be able to thank you enough for every day that you're a part of my life :)";
+  } else {
+    document.getElementById("secretMsg").innerText =
+      "Try again 😉";
+  }
+}
+</script>
+
+</body>
+</html>
