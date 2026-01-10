@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Riddhu ❤️</title>
 
 <style>
@@ -16,7 +17,7 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 50px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,11 +34,11 @@ section.active {
 
 .hidden { display: none; }
 
-h1 { font-size: 3rem; margin-bottom: 10px; }
-p { font-size: 1.1rem; max-width: 760px; line-height: 1.7; }
+h1 { font-size: 2.4rem; margin-bottom: 10px; }
+p { font-size: 1.05rem; max-width: 760px; line-height: 1.7; }
 
 button {
-  margin-top: 25px;
+  margin-top: 22px;
   padding: 12px 26px;
   border-radius: 30px;
   border: none;
@@ -53,9 +54,14 @@ button:hover { background: #ff3b70; }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 18px;
   max-width: 1100px;
 }
+
+@media (max-width: 800px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 .card {
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
@@ -66,18 +72,16 @@ button:hover { background: #ff3b70; }
   transition: transform 0.35s ease;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
+.card:hover { transform: scale(1.05); }
 
 .card img {
   width: 100%;
-  height: 170px;
+  height: 160px;
   object-fit: cover;
 }
 
 .card p {
-  padding: 15px;
+  padding: 14px;
   font-weight: bold;
 }
 
@@ -96,8 +100,8 @@ button:hover { background: #ff3b70; }
 .memory {
   background: rgba(255,255,255,0.95);
   border-radius: 18px;
-  margin: 22px 0;
-  padding: 20px;
+  margin: 20px 0;
+  padding: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   text-align: left;
 }
@@ -107,7 +111,7 @@ button:hover { background: #ff3b70; }
   max-height: 280px;
   object-fit: cover;
   border-radius: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* Easter eggs */
@@ -124,9 +128,8 @@ button:hover { background: #ff3b70; }
 #egg5 { top: 60%; left: 5%; }
 #egg6 { bottom: 45%; right: 18%; }
 
-
 #reasonText {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #ff5c8a;
 }
@@ -135,14 +138,12 @@ button:hover { background: #ff3b70; }
 
 <body>
 
-<!-- INTRO -->
 <section id="intro" class="active">
   <h1>HAPPY BIRTHDAY MONKEYYYYY 💖💖😜🥳🥳🥳</h1>
   <p>I made this only for you Riddhu, the most important person in my life :)</p>
   <button onclick="go('menu')">Start</button>
 </section>
 
-<!-- MENU -->
 <section id="menu" class="hidden">
   <h1>Choose Anything ✨</h1>
 
@@ -171,65 +172,28 @@ button:hover { background: #ff3b70; }
   <button onclick="go('end')">I saw everything</button>
 </section>
 
-<!-- LETTER -->
 <section id="letter" class="hidden">
   <h1>Letter For U 💖</h1>
   <p id="typedText"></p>
   <button onclick="go('menu')">Back</button>
 </section>
 
-<!-- MEMORIES -->
 <section id="memories" class="hidden">
   <h1>Us 💗</h1>
 
   <div class="timeline">
-    <div class="memory">
-      <img src="mem1.jpg">
-      <strong>Together on sand dune</strong><br>
-      Just us, the wind, and a moment that felt unreal.
-    </div>
-
-    <div class="memory">
-      <img src="mem2.jpg">
-      <strong>Secret Admirer</strong><br>
-      You're not sneaky hun.
-    </div>
-
-    <div class="memory">
-      <img src="mem3.jpeg">
-      <strong>Us between lanterns</strong><br>
-      Everything glowing, especially you.
-    </div>
-
-    <div class="memory">
-      <img src="mem4.jpg">
-      <strong>You looking like a ajji</strong><br>
-      Iconic. Timeless. Absolutely ancient 🤣.
-    </div>
-
-    <div class="memory">
-      <img src="mem5.jpg">
-      <strong>You trying to be cool</strong><br>
-      Failed successfully (still hot though).
-    </div>
-
-    <div class="memory">
-      <img src="mem6.jpeg">
-      <strong>Us doing bs at a mall</strong><br>
-      We don't have a poker face.
-    </div>
-
-    <div class="memory">
-      <img src="mem7.jpeg">
-      <strong>Us in Ferrari World</strong><br>
-      Speed, screams, and the biggest smiles.
-    </div>
+    <div class="memory"><img src="mem1.jpg"><strong>Together on sand dune</strong><br>Just us, the wind, and a moment that felt unreal.</div>
+    <div class="memory"><img src="mem2.jpg"><strong>Secret Admirer</strong><br>You're not sneaky hun.</div>
+    <div class="memory"><img src="mem3.jpeg"><strong>Us between lanterns</strong><br>Everything glowing, especially you.</div>
+    <div class="memory"><img src="mem4.jpg"><strong>You looking like a ajji</strong><br>Iconic. Timeless. Absolutely ancient 🤣.</div>
+    <div class="memory"><img src="mem5.jpg"><strong>You trying to be cool</strong><br>Failed successfully (still hot though).</div>
+    <div class="memory"><img src="mem6.jpeg"><strong>Us doing bs at a mall</strong><br>We don't have a poker face.</div>
+    <div class="memory"><img src="mem7.jpeg"><strong>Us in Ferrari World</strong><br>Speed, screams, and the biggest smiles.</div>
   </div>
 
   <button onclick="go('menu')">Back</button>
 </section>
 
-<!-- REASONS -->
 <section id="reasons" class="hidden">
   <h1>You Matter ❤️</h1>
   <p id="reasonText">Click below</p>
@@ -237,7 +201,6 @@ button:hover { background: #ff3b70; }
   <button onclick="go('menu')">Back</button>
 </section>
 
-<!-- SECRET -->
 <section id="secret" class="hidden">
   <h1>Only You Know This</h1>
   <p>Which is the best day of my life? (DD/MM/YYYY)</p>
@@ -247,20 +210,17 @@ button:hover { background: #ff3b70; }
   <button onclick="go('menu')">Back</button>
 </section>
 
-<!-- END -->
 <section id="end" class="hidden">
   <h1>Happy Birthday ❤️</h1>
   <p>This will always be yours.</p>
 </section>
 
-<!-- Easter eggs -->
 <div class="egg" id="egg1" onclick="alert('I love you endlessly ❤️')">💖</div>
 <div class="egg" id="egg2" onclick="alert('You are my favourite person ✨')">✨</div>
 <div class="egg" id="egg3" onclick="alert('You are my home 🏡')">🌸</div>
 <div class="egg" id="egg4" onclick="alert('I choose you. Every time. 💍')">💫</div>
 <div class="egg" id="egg5" onclick="alert('My safest place is you 💗')">🫶</div>
 <div class="egg" id="egg6" onclick="alert('You make my world softer 🌙')">⭐</div>
-
 
 <script>
 function go(id) {
@@ -273,7 +233,6 @@ function go(id) {
   setTimeout(() => sec.classList.add("active"), 50);
 }
 
-/* LETTER */
 const letter = `HAPPY BIRTHDAY MY AMAZINGGGGGG RIDDHUUUU!!!
 
 Today is a day that the whole universe should be celebrating, because it’s the day my favoritest person was born (any guesses who?). Having you in my life feels like living in a permanent springtime, (that's if spring was the best cause winter is clearly better)—everything is just brighter, softer, and so much more beautiful when I’m with you.
@@ -307,13 +266,10 @@ function openLetter() {
     if (index < letter.length) {
       document.getElementById("typedText").innerText += letter[index];
       index++;
-    } else {
-      clearInterval(typingInterval);
-    }
+    } else clearInterval(typingInterval);
   }, 35);
 }
 
-/* Reasons */
 const reasons = [
   "The way you laugh like a baboon",
   "Your random expressions and dancing",
@@ -352,26 +308,21 @@ const reasons = [
   "Your refusal to admit you’re tired until your head is literally drooping.",
   "The amount of energy you have in the mornings omg how r u so hyper",
   "The way you SCREAM at the sight of an ant or cockroach but find a giant spider cute",
-  
 ];
 
 function newReason() {
-  const r = reasons[Math.floor(Math.random() * reasons.length)];
-  document.getElementById("reasonText").innerText = r;
+  document.getElementById("reasonText").innerText =
+    reasons[Math.floor(Math.random() * reasons.length)];
 }
 
-/* Secret */
 function check() {
   const ans = document.getElementById("answer").value.trim();
-  if (ans === "03/10/2024") {
-    document.getElementById("secretMsg").innerText =
-      "That day lives in my heart forever ❤️... You made it so good. I'll never be able to thank you enough for every day that you're a part of my life :)";
-  } else {
-    document.getElementById("secretMsg").innerText =
-      "Try again 😉";
-  }
+  document.getElementById("secretMsg").innerText =
+    ans === "03/10/2024"
+    ? "That day lives in my heart forever ❤️... You made it so good."
+    : "Try again 😉";
 }
 </script>
-
 </body>
 </html>
+
