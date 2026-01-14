@@ -392,12 +392,28 @@ const reasons = [
   "The way you nod enthusiastically even when confused.",
   "How you start random conversations that make me smile.",
 ];
+let shuffledReasons = [];
+let reasonIndex = 0;
 
-function newReason() {
-  document.getElementById("reasonText").innerText =
-    reasons[Math.floor(Math.random() * reasons.length)];
+function shuffleReasons() {
+  shuffledReasons = [...reasons];
+  for (let i = shuffledReasons.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledReasons[i], shuffledReasons[j]] = [shuffledReasons[j], shuffledReasons[i]];
+  }
+  reasonIndex = 0;
 }
 
+// Shuffle once when page loads
+shuffleReasons();
+
+function newReason() {
+  if (reasonIndex >= shuffledReasons.length) {
+    shuffleReasons(); // reshuffle when all are used
+  }
+  document.getElementById("reasonText").innerText =
+    shuffledReasons[reasonIndex++];
+}
 // Secret check
 function check() {
   const ans = document.getElementById("answer").value.trim();
@@ -410,6 +426,7 @@ function check() {
 
 </body>
 </html>
+
 
 
 
