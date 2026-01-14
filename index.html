@@ -7,13 +7,37 @@
 
 <style>
 body {
-  margin: 0;
+  margin: 10px;                 /* space for border */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   text-align: center;
   overflow-x: hidden;
   transition: background 1.2s ease, color 0.8s ease;
+
+  border: 3px solid white;      /* the border */
+  box-sizing: border-box;
 }
+@media (max-width: 600px) {
+  body {
+    margin: 6px;
+    border-width: 2px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    margin: 8px;
+    border-width: 2.5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    margin: 12px;
+    border-width: 3px;
+  }
+}
+
 
 section {
   min-height: 100vh;
@@ -386,6 +410,7 @@ function check() {
 
 </body>
 </html>
+
 
 
 
