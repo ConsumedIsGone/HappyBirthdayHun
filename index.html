@@ -284,6 +284,10 @@ function hideEggs() {
 
 function go(id) {
   window.scrollTo(0,0);
+if (id === "finish") {
+  setTimeout(launchConfetti, 300);
+}
+
 
   const themes = {
     'intro': 'linear-gradient(135deg, #ffd6e8, #fff1f7)',
@@ -422,10 +426,26 @@ function check() {
       ? "That day lives in my heart forever ❤️... You made it so good. And since you passed this test AND ig because it's your bday 🙄, you get a free trump card that you can redeem anything with. Do with this power what you may, be forgiving 🙏"
       : "Try again 😉";
 }
-</script>
+function launchConfetti() {
+  const duration = 3 * 1000;
+  const end = Date.now() + duration;
 
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
+
 
 
 
